@@ -9,7 +9,7 @@ Messages:
   OnCooldown: "&cTa kategoria jest na cooldownie jeszcze przez &f{seconds}s&c."
   NoActiveVote: "&cAktualnie nie trwa żadne głosowanie."
   AlreadyVoted: "&cJuż oddałeś swój głos."
-  VoteStarted: "&e{player} &7rozpoczął głosowanie: &b{unit}&7. Napisz &a/vot yes &7lub &c/vot no&7."
+  VoteStarted: "&e{player} &7rozpoczął głosowanie: &b{unit}&7."
   VoteCast: "&7Oddano głos: &b{choice} &7(&a{agree}&7/&c{disagree}&7)"
   VoteSuccess: "&aSukces! Zastosowano: &b{unit} &7(&a{agree}&7/&c{disagree}&7)"
   VoteFailed: "&cOdrzucono: &b{unit} &7(&a{agree}&7/&c{disagree}&7)"
@@ -29,3 +29,7 @@ Units:
 VisualMessages:
   BossBarTitle: "&b{unit} &7- &f{seconds}s &7- &a{agree} &7/ &c{disagree}"
   ActionBar: "&b{unit} &7- &f{seconds}s &7- &a{agree} &7/ &c{disagree}"
+  ClickPrompt: "&7Oddaj głos: "
+  ClickYes: "&a&l[JESTEM ZA]"
+  ClickSeparator: " &8| "
+  ClickNo: "&c&l[JESTEM PRZECIW]"
