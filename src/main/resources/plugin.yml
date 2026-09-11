@@ -1,19 +1,31 @@
-name: Voting
-version: '1.1.0'
-main: com.example.voting.VotingPlugin
+name: WeatherVote
+version: '2.0.0'
+main: pl.slawcio.weathervote.WeatherVotePlugin
 author: slawek
-api-version: '1.20'
+description: Lightweight weather and time voting for Spigot/Paper servers.
+api-version: '1.13'
 
 commands:
   vot:
-    description: Komenda do obsługi głosowania.
-    usage: "/vot <opcja|yes|no>"
-    permission: voting.vote.start
+    description: Start a weather/time vote or cast your vote.
+    usage: "/vot <Day|Night|Sun|Rain|Storm|Yes|No>"
+    aliases: [weathervote, wv]
 
 permissions:
+  weathervote.vote.start:
+    description: Allows starting weather and time votes.
+    default: true
+  weathervote.vote.place:
+    description: Allows casting a vote.
+    default: true
+  weathervote.admin:
+    description: Allows reloading WeatherVote configuration and language files.
+    default: op
+
+  # Legacy permissions kept for existing installations.
   voting.vote.start:
-    description: Pozwala zacząć głosowanie.
-    default: true
+    description: Legacy permission for starting votes.
+    default: false
   voting.vote.place:
-    description: Pozwala oddać głos.
-    default: true
+    description: Legacy permission for casting votes.
+    default: false
