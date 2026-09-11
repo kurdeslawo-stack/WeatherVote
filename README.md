@@ -59,9 +59,11 @@ weathervote.vote.place   default: true
 weathervote.admin        default: op
 ```
 
-## Compatibility target
+## Compatibility
 
-The public-release branch is intentionally compiled against the Spigot 1.13.2 API with Java 8 bytecode and avoids modern-only APIs. The goal is one JAR for older and current Spigot/Paper versions. Compatibility still needs runtime smoke tests before publishing the final release.
+WeatherVote 2.0.0 is compiled against the Spigot 1.13.2 API with Java 8 bytecode and avoids modern-only APIs where possible.
+
+Runtime smoke test confirmed on **Paper 26.2**. Older Minecraft versions have not yet been runtime-tested, so do not treat 1.13+ support as fully verified until those tests are completed.
 
 ## Build
 
