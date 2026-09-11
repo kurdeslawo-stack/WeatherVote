@@ -1,0 +1,19 @@
+name: Voting
+version: '1.1.0'
+main: com.example.voting.VotingPlugin
+author: slawek
+api-version: '1.20'
+
+commands:
+  vot:
+    description: Komenda do obsługi głosowania.
+    usage: "/vot <opcja|yes|no>"
+    permission: voting.vote.start
+
+permissions:
+  voting.vote.start:
+    description: Pozwala zacząć głosowanie.
+    default: true
+  voting.vote.place:
+    description: Pozwala oddać głos.
+    default: true
