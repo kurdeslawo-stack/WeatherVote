@@ -1,29 +1,28 @@
+# Available languages: pl, eng ("en" is also accepted as an alias for eng)
+language: pl
+
 Round:
+  # Vote duration in seconds.
   Duration: 30
+  # Minimum number of players online required to start a vote.
   MinPlayers: 1
   Pause:
     Active: true
     CategoryList:
-      DAY_LIGHT: { Duration: 540 }
-      CLIMATE: { Duration: 540 }
+      # Cooldowns are in seconds and are shared by vote category.
+      DAY_LIGHT:
+        Duration: 540
+      CLIMATE:
+        Duration: 540
 
+# Empty list = all NORMAL worlds.
+# Example: ["world", "survival"]
 Worlds: []
 
 Visual:
-  BossBar: { Active: true, Color: BLUE, Style: SEGMENTED_20 }
-  ActionBar: { Active: true }
-
-Messages:
-  Prefix: "&8[&bVoting&8] &r"
-  NoPermission: "&cNie masz uprawnień."
-  UnknownUnit: "&cNieznana opcja. Dostępne: Day, Night, Sun, Rain, Storm, Yes, No."
-  AlreadyActive: "&cGłosowanie już trwa."
-  NotEnoughPlayers: "&cZa mało graczy online."
-  OnCooldown: "&cTa kategoria głosowania jest obecnie zablokowana."
-  NoActiveVote: "&cAktualnie nie trwa żadne głosowanie."
-  AlreadyVoted: "&cJuz oddałeś swój głos."
-  VoteStarted: "&e{player} &7rozpoczął głosowanie: &b{unit}&7. Napisz &a/vot yes &7lub &c/vot no&7."
-  VoteCast: "&7Oddano głos: &b{choice} &7({agree}/{disagree})"
-  VoteSuccess: "&aSukces! Zastosowano: &b{unit} &7({agree}/{disagree})"
-  VoteFailed: "&cOdrzucono: &b{unit} &7({agree}/{disagree})"
-  BossBarTitle: "&b{unit} &7- &f{seconds}s &7- &a{agree} &7/ &c{disagree}"
+  BossBar:
+    Active: true
+    Color: BLUE
+    Style: SEGMENTED_20
+  ActionBar:
+    Active: true
