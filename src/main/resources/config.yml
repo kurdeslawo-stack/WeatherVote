@@ -26,3 +26,6 @@ Visual:
     Style: SEGMENTED_20
   ActionBar:
     Active: true
+  InteractiveChat:
+    # Show clickable YES / NO buttons in chat when a vote starts.
+    Active: true
