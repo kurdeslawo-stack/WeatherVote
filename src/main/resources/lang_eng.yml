@@ -1,0 +1,38 @@
+Messages:
+  Prefix: "&8[&bWeatherVote&8] &r"
+  NoPermission: "&cYou do not have permission."
+  PlayerOnly: "&cOnly players can cast votes."
+  Usage: "&cUsage: /vot <Day|Night|Sun|Rain|Storm|Yes|No>"
+  UnknownUnit: "&cUnknown option. Available: Day, Night, Sun, Rain, Storm, Yes, No."
+  AlreadyActive: "&cA vote is already in progress."
+  NotEnoughPlayers: "&cThere are not enough players online."
+  OnCooldown: "&cThis vote category is on cooldown for another &f{seconds}s&c."
+  NoActiveVote: "&cThere is no active vote."
+  AlreadyVoted: "&cYou have already cast your vote."
+  VoteStarted: "&e{player} &7started a vote for: &b{unit}&7."
+  VoteCast: "&aYour vote has been saved. &8(&a{agree} &7for &8/ &c{disagree} &7against&8)"
+  VoteSuccess: "&aVote passed. &7Selected: &e{unit} &8(&a{agree} &7for &8/ &c{disagree} &7against&8)"
+  VoteFailed: "&cVote rejected. &7Proposal: &e{unit} &8(&a{agree} &7for &8/ &c{disagree} &7against&8)"
+  Reloaded: "&aConfiguration and language files reloaded."
+
+Choices:
+  Yes: "Yes"
+  No: "No"
+
+Units:
+  Day: "Day"
+  Night: "Night"
+  Sun: "Sun"
+  Rain: "Rain"
+  Storm: "Storm"
+
+VisualMessages:
+  BossBarTitle: "&b{unit} &8• &f{seconds}s &8• &a{agree} &7for &8/ &c{disagree} &7against"
+  ActionBar: "&b{unit} &8• &f{seconds}s &8• &a{agree} &7for &8/ &c{disagree} &7against"
+  ChatDivider: "&8&m----------------------------------------"
+  ChatTitle: "&b&lWEATHERVOTE &8» &fNew vote"
+  ChatProposal: "&7Player: &f{player} &8• &7Proposal: &e{unit}"
+  ClickPrompt: "&7Choose: "
+  ClickYes: "&a&l&n[ I'M FOR ]"
+  ClickSeparator: " &8• "
+  ClickNo: "&c&l&n[ I'M AGAINST ]"
