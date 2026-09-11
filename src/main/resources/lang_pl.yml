@@ -1,0 +1,31 @@
+Messages:
+  Prefix: "&8[&bWeatherVote&8] &r"
+  NoPermission: "&cNie masz uprawnień."
+  PlayerOnly: "&cTylko gracze mogą oddawać głosy."
+  Usage: "&cUżyj: /vot <Day|Night|Sun|Rain|Storm|Yes|No>"
+  UnknownUnit: "&cNieznana opcja. Dostępne: Day, Night, Sun, Rain, Storm, Yes, No."
+  AlreadyActive: "&cGłosowanie już trwa."
+  NotEnoughPlayers: "&cZa mało graczy online."
+  OnCooldown: "&cTa kategoria jest na cooldownie jeszcze przez &f{seconds}s&c."
+  NoActiveVote: "&cAktualnie nie trwa żadne głosowanie."
+  AlreadyVoted: "&cJuż oddałeś swój głos."
+  VoteStarted: "&e{player} &7rozpoczął głosowanie: &b{unit}&7. Napisz &a/vot yes &7lub &c/vot no&7."
+  VoteCast: "&7Oddano głos: &b{choice} &7(&a{agree}&7/&c{disagree}&7)"
+  VoteSuccess: "&aSukces! Zastosowano: &b{unit} &7(&a{agree}&7/&c{disagree}&7)"
+  VoteFailed: "&cOdrzucono: &b{unit} &7(&a{agree}&7/&c{disagree}&7)"
+  Reloaded: "&aKonfiguracja i język zostały przeładowane."
+
+Choices:
+  Yes: "Tak"
+  No: "Nie"
+
+Units:
+  Day: "Dzień"
+  Night: "Noc"
+  Sun: "Słońce"
+  Rain: "Deszcz"
+  Storm: "Burza"
+
+VisualMessages:
+  BossBarTitle: "&b{unit} &7- &f{seconds}s &7- &a{agree} &7/ &c{disagree}"
+  ActionBar: "&b{unit} &7- &f{seconds}s &7- &a{agree} &7/ &c{disagree}"
