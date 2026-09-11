@@ -10,9 +10,9 @@ Messages:
   NoActiveVote: "&cThere is no active vote."
   AlreadyVoted: "&cYou have already cast your vote."
   VoteStarted: "&e{player} &7started a vote for: &b{unit}&7."
-  VoteCast: "&7Vote cast: &b{choice} &7(&a{agree}&7/&c{disagree}&7)"
-  VoteSuccess: "&aSuccess! Applied: &b{unit} &7(&a{agree}&7/&c{disagree}&7)"
-  VoteFailed: "&cVote rejected: &b{unit} &7(&a{agree}&7/&c{disagree}&7)"
+  VoteCast: "&aYour vote has been saved. &8(&a{agree} &7for &8/ &c{disagree} &7against&8)"
+  VoteSuccess: "&aVote passed. &7Selected: &e{unit} &8(&a{agree} &7for &8/ &c{disagree} &7against&8)"
+  VoteFailed: "&cVote rejected. &7Proposal: &e{unit} &8(&a{agree} &7for &8/ &c{disagree} &7against&8)"
   Reloaded: "&aConfiguration and language files reloaded."
 
 Choices:
@@ -27,9 +27,12 @@ Units:
   Storm: "Storm"
 
 VisualMessages:
-  BossBarTitle: "&b{unit} &7- &f{seconds}s &7- &a{agree} &7/ &c{disagree}"
-  ActionBar: "&b{unit} &7- &f{seconds}s &7- &a{agree} &7/ &c{disagree}"
-  ClickPrompt: "&7Cast your vote: "
-  ClickYes: "&a&l[I'M FOR]"
-  ClickSeparator: " &8| "
-  ClickNo: "&c&l[I'M AGAINST]"
+  BossBarTitle: "&b{unit} &8• &f{seconds}s &8• &a{agree} &7for &8/ &c{disagree} &7against"
+  ActionBar: "&b{unit} &8• &f{seconds}s &8• &a{agree} &7for &8/ &c{disagree} &7against"
+  ChatDivider: "&8&m----------------------------------------"
+  ChatTitle: "&b&lWEATHERVOTE &8» &fNew vote"
+  ChatProposal: "&7Player: &f{player} &8• &7Proposal: &e{unit}"
+  ClickPrompt: "&7Choose: "
+  ClickYes: "&a&l&n[ I'M FOR ]"
+  ClickSeparator: " &8• "
+  ClickNo: "&c&l&n[ I'M AGAINST ]"
