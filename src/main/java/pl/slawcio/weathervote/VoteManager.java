@@ -1,6 +1,8 @@
 package pl.slawcio.weathervote;
 
 import net.md_5.bungee.api.ChatMessageType;
+import net.md_5.bungee.api.chat.BaseComponent;
+import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
@@ -76,11 +78,7 @@ public final class VoteManager implements Listener {
             }
         }, 20L, 20L);
 
-        Bukkit.broadcastMessage(plugin.msg(
-                "VoteStarted",
-                "{player}", initiator.getName(),
-                "{unit}", plugin.unitName(unit)));
-
+        announceVoteStart(initiator, unit);
         return StartResult.STARTED;
     }
 
@@ -142,6 +140,44 @@ public final class VoteManager implements Listener {
     public void onPlayerJoin(PlayerJoinEvent event) {
         if (bossBar != null && isActive()) {
             bossBar.addPlayer(event.getPlayer());
+        }
+    }
+
+    private void announceVoteStart(CommandSender initiator, VotingUnit unit) {
+        String header = plugin.msg(
+                "VoteStarted",
+                "{player}", initiator.getName(),
+                "{unit}", plugin.unitName(unit));
+
+        if (!plugin.getConfig().getBoolean("Visual.InteractiveChat.Active", true)) {
+            Bukkit.broadcastMessage(header);
+            return;
+        }
+
+        Bukkit.getConsoleSender().sendMessage(header);
+        BaseComponent[] buttons = buildClickableVoteLine();
+        for (Player player : Bukkit.getOnlinePlayers()) {
+            player.sendMessage(header);
+            player.spigot().sendMessage(buttons);
+        }
+    }
+
+    private BaseComponent[] buildClickableVoteLine() {
+        List<BaseComponent> components = new ArrayList<BaseComponent>();
+        appendLegacy(components, plugin.raw("VisualMessages.ClickPrompt"), null);
+        appendLegacy(components, plugin.raw("VisualMessages.ClickYes"), "/vot yes");
+        appendLegacy(components, plugin.raw("VisualMessages.ClickSeparator"), null);
+        appendLegacy(components, plugin.raw("VisualMessages.ClickNo"), "/vot no");
+        return components.toArray(new BaseComponent[components.size()]);
+    }
+
+    private void appendLegacy(List<BaseComponent> target, String text, String command) {
+        BaseComponent[] parts = TextComponent.fromLegacyText(text);
+        for (BaseComponent part : parts) {
+            if (command != null) {
+                part.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, command));
+            }
+            target.add(part);
         }
     }
 
