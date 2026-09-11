@@ -144,21 +144,32 @@ public final class VoteManager implements Listener {
     }
 
     private void announceVoteStart(CommandSender initiator, VotingUnit unit) {
-        String header = plugin.msg(
+        String consoleMessage = plugin.msg(
                 "VoteStarted",
                 "{player}", initiator.getName(),
                 "{unit}", plugin.unitName(unit));
 
         if (!plugin.getConfig().getBoolean("Visual.InteractiveChat.Active", true)) {
-            Bukkit.broadcastMessage(header);
+            Bukkit.broadcastMessage(consoleMessage);
             return;
         }
 
-        Bukkit.getConsoleSender().sendMessage(header);
+        Bukkit.getConsoleSender().sendMessage(consoleMessage);
+
+        String divider = plugin.raw("VisualMessages.ChatDivider");
+        String title = plugin.raw("VisualMessages.ChatTitle");
+        String proposal = plugin.raw(
+                "VisualMessages.ChatProposal",
+                "{player}", initiator.getName(),
+                "{unit}", plugin.unitName(unit));
         BaseComponent[] buttons = buildClickableVoteLine();
+
         for (Player player : Bukkit.getOnlinePlayers()) {
-            player.sendMessage(header);
+            player.sendMessage(divider);
+            player.sendMessage(title);
+            player.sendMessage(proposal);
             player.spigot().sendMessage(buttons);
+            player.sendMessage(divider);
         }
     }
 
