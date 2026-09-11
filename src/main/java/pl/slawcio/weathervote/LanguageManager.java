@@ -57,7 +57,13 @@ public final class LanguageManager {
     }
 
     public String raw(String path, String... placeholders) {
-        String value = language.getString(path, path);
+        // Use the bundled language file as a fallback for keys added in newer
+        // plugin versions. Calling getString(path, path) would bypass Bukkit's
+        // configured defaults and expose the raw YAML path to players.
+        String value = language.getString(path);
+        if (value == null) {
+            value = path;
+        }
         for (int i = 0; i + 1 < placeholders.length; i += 2) {
             value = value.replace(placeholders[i], placeholders[i + 1]);
         }
