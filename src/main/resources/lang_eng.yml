@@ -9,7 +9,7 @@ Messages:
   OnCooldown: "&cThis vote category is on cooldown for another &f{seconds}s&c."
   NoActiveVote: "&cThere is no active vote."
   AlreadyVoted: "&cYou have already cast your vote."
-  VoteStarted: "&e{player} &7started a vote for: &b{unit}&7. Type &a/vot yes &7or &c/vot no&7."
+  VoteStarted: "&e{player} &7started a vote for: &b{unit}&7."
   VoteCast: "&7Vote cast: &b{choice} &7(&a{agree}&7/&c{disagree}&7)"
   VoteSuccess: "&aSuccess! Applied: &b{unit} &7(&a{agree}&7/&c{disagree}&7)"
   VoteFailed: "&cVote rejected: &b{unit} &7(&a{agree}&7/&c{disagree}&7)"
@@ -29,3 +29,7 @@ Units:
 VisualMessages:
   BossBarTitle: "&b{unit} &7- &f{seconds}s &7- &a{agree} &7/ &c{disagree}"
   ActionBar: "&b{unit} &7- &f{seconds}s &7- &a{agree} &7/ &c{disagree}"
+  ClickPrompt: "&7Cast your vote: "
+  ClickYes: "&a&l[I'M FOR]"
+  ClickSeparator: " &8| "
+  ClickNo: "&c&l[I'M AGAINST]"
