@@ -36,3 +36,19 @@ VisualMessages:
   ClickYes: "&a&l&n[ I'M FOR ]"
   ClickSeparator: " &8• "
   ClickNo: "&c&l&n[ I'M AGAINST ]"
+  Transitions:
+    Day:
+      Title: "&e&l☀ DAY"
+      Subtitle: "&fThe world wakes up"
+    Night:
+      Title: "&9&l☾ NIGHT"
+      Subtitle: "&7Silence settles over the world"
+    Sun:
+      Title: "&6&l☀ CLEAR SKIES"
+      Subtitle: "&eThe clouds begin to break"
+    Rain:
+      Title: "&b&l☂ RAIN"
+      Subtitle: "&7Heavy clouds are moving in"
+    Storm:
+      Title: "&8&l⚡ STORM"
+      Subtitle: "&7A violent storm is approaching"
