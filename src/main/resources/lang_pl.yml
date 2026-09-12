@@ -36,3 +36,19 @@ VisualMessages:
   ClickYes: "&a&l&n[ JESTEM ZA ]"
   ClickSeparator: " &8• "
   ClickNo: "&c&l&n[ JESTEM PRZECIW ]"
+  Transitions:
+    Day:
+      Title: "&e&l☀ DZIEŃ"
+      Subtitle: "&fŚwiat budzi się do życia"
+    Night:
+      Title: "&9&l☾ NOC"
+      Subtitle: "&7Nad światem zapada cisza"
+    Sun:
+      Title: "&6&l☀ SŁOŃCE"
+      Subtitle: "&eNiebo zaczyna się rozpogadzać"
+    Rain:
+      Title: "&b&l☂ DESZCZ"
+      Subtitle: "&7Nadciągają ciężkie chmury"
+    Storm:
+      Title: "&8&l⚡ BURZA"
+      Subtitle: "&7Nadchodzi prawdziwa nawałnica"
