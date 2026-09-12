@@ -28,6 +28,7 @@ import java.util.UUID;
 public final class VoteManager implements Listener {
 
     private final WeatherVotePlugin plugin;
+    private final TransitionEffects transitionEffects;
     private VotingUnit activeUnit;
     private final Set<UUID> agreeVoters = new HashSet<UUID>();
     private final Set<UUID> disagreeVoters = new HashSet<UUID>();
@@ -39,6 +40,7 @@ public final class VoteManager implements Listener {
 
     public VoteManager(WeatherVotePlugin plugin) {
         this.plugin = plugin;
+        this.transitionEffects = new TransitionEffects(plugin);
     }
 
     public boolean isActive() {
@@ -229,7 +231,7 @@ public final class VoteManager implements Listener {
 
         if (success) {
             for (World world : getTargetWorlds()) {
-                finishedUnit.apply(world);
+                transitionEffects.play(world, finishedUnit);
             }
             Bukkit.broadcastMessage(plugin.msg(
                     "VoteSuccess",
