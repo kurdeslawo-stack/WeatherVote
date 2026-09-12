@@ -29,3 +29,12 @@ Visual:
   InteractiveChat:
     # Show clickable YES / NO buttons in chat when a vote starts.
     Active: true
+  Transitions:
+    # Cinematic effects played after a successful weather/time vote.
+    Active: true
+    # Duration of the transition animation in ticks (20 ticks = 1 second).
+    # Values are clamped to 20-200 ticks.
+    DurationTicks: 60
+    Titles: true
+    Sounds: true
+    Particles: true
