@@ -5,6 +5,7 @@ import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
+import org.bukkit.Sound;
 import org.bukkit.World;
 import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarStyle;
@@ -80,6 +81,7 @@ public final class VoteManager implements Listener {
             }
         }, 20L, 20L);
 
+        playVoteStartSound();
         announceVoteStart(initiator, unit);
         return StartResult.STARTED;
     }
@@ -142,6 +144,30 @@ public final class VoteManager implements Listener {
     public void onPlayerJoin(PlayerJoinEvent event) {
         if (bossBar != null && isActive()) {
             bossBar.addPlayer(event.getPlayer());
+        }
+    }
+
+    private void playVoteStartSound() {
+        if (!plugin.getConfig().getBoolean("Visual.VoteStartSound.Active", true)) {
+            return;
+        }
+
+        String soundName = plugin.getConfig().getString("Visual.VoteStartSound.Sound", "BLOCK_NOTE_BLOCK_PLING");
+        double configuredVolume = plugin.getConfig().getDouble("Visual.VoteStartSound.Volume", 0.7D);
+        double configuredPitch = plugin.getConfig().getDouble("Visual.VoteStartSound.Pitch", 1.4D);
+        float volume = (float) Math.max(0.0D, configuredVolume);
+        float pitch = (float) Math.max(0.5D, Math.min(2.0D, configuredPitch));
+
+        Sound sound;
+        try {
+            sound = Sound.valueOf(Objects.toString(soundName, "BLOCK_NOTE_BLOCK_PLING").toUpperCase(java.util.Locale.ROOT));
+        } catch (IllegalArgumentException exception) {
+            plugin.getLogger().warning("Invalid vote start sound '" + soundName + "'. Skipping start sound.");
+            return;
+        }
+
+        for (Player player : Bukkit.getOnlinePlayers()) {
+            player.playSound(player.getLocation(), sound, volume, pitch);
         }
     }
 
