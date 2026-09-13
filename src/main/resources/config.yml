@@ -29,6 +29,12 @@ Visual:
   InteractiveChat:
     # Show clickable YES / NO buttons in chat when a vote starts.
     Active: true
+  VoteStartSound:
+    # Short notification played to all online players when a new vote starts.
+    Active: true
+    Sound: BLOCK_NOTE_BLOCK_PLING
+    Volume: 0.7
+    Pitch: 1.4
   Transitions:
     # Cinematic effects played after a successful weather/time vote.
     Active: true
